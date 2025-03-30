@@ -48,4 +48,74 @@ def palindromo():
     else:
         print("Las palabras ingresadas no son un palíndromo")
 
-palindromo()        
+palindromo()  
+
+"""
+SUCESIÓN DE FIBONACCI
+
+Escribe un programa que improma los 50 primeros números de la sucesión 
+de Fibonacci empezando por cero. 
+-La sucesión de Fibonacci se compone por una sucesión de números
+ en la que el siguiente siempre es la suma de los dos anteriores.
+
+"""
+
+def fibonacci():
+#     a = 0
+#     b = 1
+#     for i in range(50):
+#         print(a)
+#         a, b = b, a + b
+        
+# fibonacci()
+
+
+    n_prev = 0
+    n_next = 1
+
+    for i in range(0, 50):
+        print(n_prev)
+        fib = n_prev + n_next
+        n_prev = n_next
+        n_next = fib
+
+fibonacci()       
+
+"""
+NÚMEROS PRIMOS
+Escribe un programa que se encargue de comprobar si un número es o no primo.
+- Imprime los números primos del 1 al 100
+
+"""
+
+def n_primo():
+
+    for number in range(1, 101):
+        if number >= 2:
+
+            is_divisible = False
+
+            for i in range(2, number):
+                if number % i == 0:
+                    is_divisible = True
+                    break
+        
+        if not is_divisible:
+            print(number)
+    
+    n_primo()
+    
+
+    """
+    Crea un programa que invierta el orden de una cadena de texto
+    sin usar funciones propias del lenguaje que lo hagan de forma automática.
+    
+    """
+
+    def reverse(text):
+        reverse_text = ""
+        for char in text:
+            reverse_text = char + reverse_text
+
+        return reverse_text
+    print(reverse("Hola Mundo"))
